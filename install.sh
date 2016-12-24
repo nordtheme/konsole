@@ -104,7 +104,7 @@ NORD_KONSOLE_SCRIPT_OPTS=`getopt -o vhs: --long verbose,help,schemefile: -n 'ins
 SCHEME_FILE=src/nord.colorscheme
 VERBOSE=false
 LOCAL_INSTALL_DIR=~/.local/share/konsole
-NORD_KONSOLE_VERSION=
+NORD_KONSOLE_VERSION=0.1.0
 
 eval set -- "$NORD_KONSOLE_SCRIPT_OPTS"
 while true; do
