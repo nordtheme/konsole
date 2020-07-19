@@ -102,8 +102,13 @@ trap "printf '${_ctb_error}User aborted.${_ctb_reset}\n' && exit 1" SIGINT SIGTE
 NORD_KONSOLE_SCRIPT_OPTS=`getopt -o vhs: --long verbose,help,schemefile: -n 'install.sh' -- "$@"`
 SCHEME_FILE=src/nord.colorscheme
 VERBOSE=false
-LOCAL_INSTALL_DIR=~/.local/share/konsole
 NORD_KONSOLE_VERSION=0.1.0
+
+if [ -z "$XDG_DATA_HOME" ]; then
+  LOCAL_INSTALL_DIR=~/.local/share/konsole
+else
+  LOCAL_INSTALL_DIR="${XDG_DATA_HOME}/konsole"
+fi
 
 eval set -- "$NORD_KONSOLE_SCRIPT_OPTS"
 while true; do
